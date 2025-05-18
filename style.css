@@ -1,0 +1,581 @@
+/* Global Styles */
+body {
+    font-family: 'Lato', 'Georgia', serif; /* Updated font */
+    margin: 0;
+    padding: 0;
+    background-color: #222831; /* Dark Slate Gray - Main Background */
+    color: #EEEEEE; /* Very Light Gray / Off-White - Text Color */
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1, h2, h3, h4 {
+    color: #00ADB5; /* Bright Cyan/Teal - Accent Color 1 */
+}
+
+a {
+    color: #00ADB5; /* Bright Cyan/Teal */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4FC3F7; /* Lighter Cyan for hover */
+}
+
+/* Header & Navigation */
+header {
+    background-color: #1D2B38; /* Darker shade for header */
+    color: #EEEEEE;
+    padding: 1em 0;
+    border-bottom: 3px solid #00ADB5; /* Bright Cyan/Teal border */
+}
+
+header h1 {
+    color: #EEEEEE;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0.5em;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative; /* For dropdown positioning */
+}
+
+nav ul li a {
+    color: #EEEEEE;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #00ADB5; /* Bright Cyan/Teal */
+    color: #1D2B38; /* Dark background color for text contrast */
+}
+
+/* Recipe Dropdown Menu */
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #393E46; /* Content Background */
+    border: 1px solid #4F8A8B; /* Muted Cyan border */
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 250px; /* Adjust as needed */
+    padding: 0;
+}
+
+.dropdown-menu li {
+    display: block;
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8em 1.2em;
+    color: #EEEEEE;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #00ADB5;
+    color: #1D2B38;
+}
+
+/* Main Content */
+main {
+    padding: 2em 0;
+}
+
+.main-content-area.blurred {
+    filter: blur(5px);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: none; /* Optional: prevent interaction with blurred content */
+}
+
+.main-content-area {
+    transition: filter 0.3s ease-in-out; /* Smooth transition for blur removal */
+}
+
+main section {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background-color: #393E46; /* Content Background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Darker shadow */
+}
+
+main section h2, main section h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+/* JS Carousel */
+.js-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 1em auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 173, 181, 0.3); /* Cyan shadow */
+    border: 2px solid #00ADB5; /* Bright Cyan/Teal border */
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Remove radio and dots styling */
+.carousel-radio, .carousel-dots {
+    display: none;
+}
+
+/* Carousel Controls (Arrows) */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-control:hover {
+    background-color: rgba(0, 173, 181, 0.8); /* Brighter Cyan on hover */
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Info Blocks on Home Page */
+.info-blocks {
+    display: flex;
+    gap: 1.5em;
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: #393E46; /* Content Background */
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-align: center;
+    border: 1px solid #4F8A8B; /* Muted Cyan border */
+}
+
+.info-block h4 {
+    margin-top: 0;
+    color: #00ADB5; /* Accent color for headings */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00ADB5; /* Bright Cyan/Teal */
+    color: #222831; /* Dark text for contrast */
+    padding: 0.8em 1.5em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1em;
+}
+
+.btn:hover {
+    background-color: #4FC3F7; /* Lighter Cyan */
+    color: #1D2B38;
+}
+
+/* Footer */
+footer {
+    background-color: #1D2B38; /* Darker shade for footer */
+    color: #EEEEEE;
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 2em;
+    border-top: 3px solid #00ADB5; /* Bright Cyan/Teal border */
+}
+
+footer p {
+    margin: 0;
+    margin-top: 1em;
+}
+
+/* Footer Navigation */
+footer nav {
+    margin-bottom: 1em;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+footer nav ul li a {
+    color: #EEEEEE;
+    font-weight: normal;
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+footer nav ul li a:hover,
+footer nav ul li a.active {
+    color: #1D2B38;
+    background-color: #00ADB5;
+}
+
+/* Footer Dropdown Menu - Opens Upwards */
+footer .dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
+footer .dropdown-menu {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: #393E46;
+    border: 1px solid #4F8A8B;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 250px;
+    padding: 0;
+}
+
+footer .dropdown-menu li {
+    display: block;
+    margin: 0;
+}
+
+footer .dropdown-menu li a {
+    display: block;
+    padding: 0.8em 1.2em;
+    color: #EEEEEE;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+footer .dropdown-menu li a:hover {
+    background-color: #00ADB5;
+    color: #1D2B38;
+}
+
+/* Generic Page Content Styling */
+.page-content {
+    background-color: #393E46; /* Content Background */
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.page-content h2 {
+    border-bottom: 2px solid #00ADB5; /* Bright Cyan/Teal */
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.page-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.page-content ul li {
+    background-color: #2C3E50; /* Slightly different dark shade for list items */
+    padding: 0.8em;
+    margin-bottom: 0.5em;
+    border-radius: 4px;
+    border-left: 4px solid #00ADB5; /* Bright Cyan/Teal */
+}
+
+.page-content .recipe-card, .page-content .menu-item {
+    background-color: #2C3E50; /* Slightly different dark shade */
+    border: 1px solid #4F8A8B; /* Muted Cyan border */
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border-radius: 6px;
+}
+
+.page-content .recipe-card h3, .page-content .menu-item h3 {
+    margin-top: 0;
+    color: #00ADB5; /* Accent color for headings */
+}
+
+.page-content .recipe-card p, .page-content .menu-item p {
+    margin-bottom: 0.5em;
+}
+
+.page-content .recipe-card strong { /* For ingredients label */
+    color: #00ADB5; /* Bright Cyan/Teal */
+}
+
+/* Video Container for Responsive YouTube Embed */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000; /* Optional: background color while video loads */
+    border-radius: 8px; /* Match section style */
+    margin-bottom: 1em; /* Space below video */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Login Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Ensure it's on top of other content */
+}
+
+.login-modal {
+    position: relative;
+    max-width: 400px;
+    width: 90%;
+    padding: 2.5em 2em 2em 2em; /* More padding */
+    background-color: #393E46; /* Content Background */
+    border-radius: 10px; /* Slightly more rounded */
+    box-shadow: 0 5px 15px rgba(0, 173, 181, 0.4); /* More pronounced Cyan shadow */
+    border: 1px solid #00ADB5; /* Bright Cyan/Teal border */
+    text-align: center; /* Center h2 */
+}
+
+.login-modal h2 {
+    margin-bottom: 1.5em;
+    color: #00ADB5; /* Accent color */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #EEEEEE;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #00ADB5; /* Cyan on hover */
+}
+
+/* Styles for the form content within the modal - reusing .login-form structure */
+.login-form-content .form-group {
+    margin-bottom: 1.5em;
+    text-align: left; /* Align labels and inputs left */
+}
+
+.login-form-content .form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: #EEEEEE; /* Light text for labels */
+    font-weight: bold;
+}
+
+.login-form-content .form-group input[type="text"],
+.login-form-content .form-group input[type="password"] {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #4F8A8B; /* Muted Cyan border */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #222831; /* Main Background for input fields */
+    color: #EEEEEE; /* Light text in input */
+}
+
+.login-form-content .form-group input[type="text"]:focus,
+.login-form-content .form-group input[type="password"]:focus {
+    border-color: #00ADB5; /* Bright Cyan/Teal on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 173, 181, 0.5); /* Cyan glow */
+}
+
+.login-form-content button {
+    width: 100%;
+    padding: 0.8em;
+    background-color: #00ADB5; /* Bright Cyan/Teal */
+    color: #222831; /* Dark text for contrast */
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 0.5em; /* Added margin top */
+}
+
+.login-form-content button:hover {
+    background-color: #4FC3F7; /* Lighter Cyan */
+    color: #1D2B38;
+}
+
+/* Ingredient Table Styles */
+.ingredient-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow-x: auto; /* For responsiveness on small screens */
+}
+
+.ingredient-table th,
+.ingredient-table td {
+    border: 1px solid #4F8A8B; /* Muted Cyan border */
+    padding: 0.8em 1em;
+    text-align: left;
+    color: #EEEEEE; /* Light text */
+    white-space: nowrap; /* Prevent text wrapping in cells, use with overflow-x */
+}
+
+.ingredient-table thead th {
+    background-color: #2C3E50; /* Slightly darker shade for header */
+    color: #00ADB5; /* Bright Cyan/Teal for header text */
+    font-weight: bold;
+    position: sticky; /* Optional: makes header sticky on scroll, if table is long */
+    top: 0; /* Required for sticky header */
+    z-index: 1; /* Ensures header is above table content during scroll */
+}
+
+.ingredient-table tbody tr:nth-child(even) {
+    background-color: #2C3E50; /* Darker shade for alternating rows */
+}
+
+.ingredient-table tbody tr:hover {
+    background-color: #4a5c6d; /* Hover effect for rows */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    nav ul li {
+        display: block;
+        margin: 0.5em 0;
+    }
+    nav ul li a {
+        display: block;
+    }
+    .dropdown-menu {
+        position: static;
+        display: none;
+        border-left: 2px solid #00ADB5;
+        border-right: 2px solid #00ADB5;
+        border-bottom: 2px solid #00ADB5;
+        margin-left: 10px;
+        box-shadow: none;
+    }
+    .dropdown-container:hover .dropdown-menu {
+        display: block;
+    }
+    .info-blocks {
+        flex-direction: column;
+    }
+    .carousel-item img {
+        height: 300px;
+    }
+    .carousel-control {
+        padding: 8px 12px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    .carousel-item img {
+        height: 200px;
+    }
+    .login-modal {
+        padding: 2em 1.5em 1.5em 1.5em;
+    }
+    .carousel-control {
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+}
