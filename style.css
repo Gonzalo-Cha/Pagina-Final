@@ -247,89 +247,74 @@ main section h2, main section h3 {
 
 
 footer {
-    background-color: #1D2B38; 
+    background-color: #1D2B38; /* Darker shade for footer */
     color: #EEEEEE;
     text-align: center;
-    padding: 1.5em 0;
+    padding: 2em 0 1.5em 0; /* Adjusted padding */
     margin-top: 2em;
-    border-top: 3px solid #00ADB5; 
+    border-top: 3px solid #00ADB5; /* Bright Cyan/Teal border */
 }
 
-footer p {
-    margin: 0;
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.footer-about, .footer-social {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.footer-about h3, .footer-social h4 {
+    color: #00ADB5; /* Bright Cyan/Teal */
+    margin-bottom: 0.8em;
+    font-size: 1.4em;
+}
+
+.footer-about p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+}
+
+.footer-social {
+    text-align: center; /* Center social icons container */
+}
+
+.footer-social .social-icon {
+    display: inline-block;
+    margin: 0 0.7em;
+    color: #EEEEEE; /* Default icon color */
+    font-size: 1.8em; /* Icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+}
+
+.footer-social .social-icon.facebook:hover { color: #3b5998; }
+.footer-social .social-icon.instagram:hover { color: #e4405f; }
+.footer-social .social-icon.twitter:hover { color: #1da1f2; }
+.footer-social .social-icon.pinterest:hover { color: #bd081c; }
+
+.footer-bottom {
+    border-top: 1px solid #393E46; /* Subtle separator */
+    padding-top: 1.5em;
     margin-top: 1em;
-}
-
-
-footer nav {
-    margin-bottom: 1em;
-}
-
-footer nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
     text-align: center;
 }
 
-footer nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-    position: relative;
-}
-
-footer nav ul li a {
-    color: #EEEEEE;
-    font-weight: normal;
-    padding: 0.5em 0.8em;
-    border-radius: 4px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-footer nav ul li a:hover,
-footer nav ul li a.active {
-    color: #1D2B38;
-    background-color: #00ADB5;
-}
-
-
-footer .dropdown-container:hover .dropdown-menu {
-    display: block;
-}
-
-footer .dropdown-menu {
-    display: none;
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    background-color: #393E46;
-    border: 1px solid #4F8A8B;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    min-width: 250px;
-    padding: 0;
-}
-
-footer .dropdown-menu li {
-    display: block;
+.footer-bottom p {
     margin: 0;
+    font-size: 0.9em;
 }
-
-footer .dropdown-menu li a {
-    display: block;
-    padding: 0.8em 1.2em;
-    color: #EEEEEE;
-    white-space: nowrap;
-    font-weight: normal;
-}
-
-footer .dropdown-menu li a:hover {
-    background-color: #00ADB5;
-    color: #1D2B38;
-}
-
 
 .page-content {
     background-color: #393E46; 
